@@ -16,6 +16,8 @@
 
 (setq eglot-autoshutdown t)
 (setq eglot-extend-to-xref t)
-(setq eglot-server-programs '((go-mode . ("gopls" "-v" "-rpc.trace" "-logfile" "eglot-gopls.txt"))))
+(setq eglot-server-programs '((go-mode . ("gopls" "-v" "-rpc.trace" "-logfile" "eglot-gopls.txt"))
+			      (c-mode . ("clangd"))))
 
 (add-hook 'go-mode-hook 'eglot-ensure)
+(add-hook 'c-mode-hook 'eglot-ensure)
